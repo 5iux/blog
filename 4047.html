@@ -1,0 +1,24 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>解决wordpress开启https后文章图片不显示 · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>解决wordpress开启https后文章图片不显示</h1><p class="meta">2017-12-11 · 文章 4047 · <a href="https://blog.5iux.cn/4047.html">原文</a></p><div class="content"><p><a href="4047/997ca9269989-1512980322-9640-timg.jpg" data-fancybox="images" ><img loading="lazy" decoding="async" class="attachment-medium size-medium" src="4047/6a3ee1959315-1512980322-9640-timg-300x166.jpg" sizes="auto, (max-width: 300px) 100vw, 300px" srcset="4047/6a3ee1959315-1512980322-9640-timg-300x166.jpg 300w, 4047/997ca9269989-1512980322-9640-timg.jpg 550w" alt="" width="300" height="166" /></a></p>
+<p>&nbsp;</p>
+<p>最近刚刚开启网站HTTPS，看着在谷歌流量浏览器下打开显示安全的绿色小锁，瞬间觉得高大了不少，</p>
+<p>但是发现个问题，就是文章页面图片不显示了，，，，表情瞬间凝固，一个大写的尴尬￣□￣｜｜</p>
+<p>于是f12看了下源码，发现图片还是保持http的状态，，然后谷百了一下，问题解决：</p>
+<p>&nbsp;</p>
+<h2>找到当前主题下的 <span id="crayon-5a1390c347d85985572276" class="crayon-syntax crayon-syntax-inline crayon-theme-secrets-of-rock crayon-theme-secrets-of-rock-inline crayon-font-monaco"><span class="crayon-pre crayon-code"><span class="crayon-t">function</span><span class="crayon-e">.php</span></span></span> 文件，编辑之，在里边代码的末尾追加如下代码：</h2>
+<div id="crayon-5a1390c347d91621094832-12" class="crayon-line crayon-striped-line"></div>
+<pre class="pure-highlightjs"><code class="php">/* 替换图片链接为 https */
+function https_image_replacer($content){
+if( is_ssl() ){
+/*已经验证使用 $_SERVER['SERVER_NAME']也可以获取到数据，但是貌似$_SERVER['HTTP_HOST']更好一点*/
+$host_name = $_SERVER['HTTP_HOST'];
+$http_host_name='http://'.$host_name.'/wp-content/uploads';
+$https_host_name='https://'.$host_name.'/wp-content/uploads';
+$content = str_replace($http_host_name, $https_host_name, $content);
+}
+return $content;
+}
+add_filter('the_content', 'https_image_replacer');</code></pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>原文：http://www.mobibrw.com/2016/3047</p>
+</div></article><nav><a href="4054.html">较新：公交</a> <a href="4045.html">较早：DY is me.</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>

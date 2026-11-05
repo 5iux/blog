@@ -1,0 +1,57 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【旧版申请页面已失效】google voice 申请连续点击脚本js · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>【旧版申请页面已失效】google voice 申请连续点击脚本js</h1><p class="meta">2017-10-19 · 文章 3814 · <a href="https://blog.5iux.cn/3814.html">原文</a></p><div class="content"><blockquote><p><span style="color: #ff0000;"><strong>【旧版申请页面已失效，新的申请方法→_→<a href="4066.html">2018年最新利用脚本申请Google Voice的方法</a>】</strong></span></p></blockquote>
+<blockquote><p>这里只说脚本具体使用方法，如何申请的教程请隔壁百度....</p></blockquote>
+<p>选择好号码后在带有continue按钮的界面(下图)，以chrome浏览器为例，选中你需要的号码，按f12键弹出浏览器开发者工具，点击console，在开发者工具console界面，粘贴下面的脚本，回车，你会看到按钮自动点击，接下来等待就可以了。。。</p>
+<p>本脚本设置了8秒点击一次，不建议修改过快，过快的话数据没提交上去就给刷新了，等于白点；脚本从别人博客转载的，只是修改了下时间，我刷了两个，最多20分钟；具体看大家自己情况，有的 比较好的号码可能刷的人比较多，时间比较长，注意事项什么的，大家自行搜索吧。</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-3815" src="3814/51fec4e3c50a-2945432-a1e470e0bc8934c2-1-1.png" alt="" width="498" height="488" /></p>
+<p>&nbsp;</p>
+<pre class="pure-highlightjs"><code class="javascript">var sleep = delay =&gt; new Promise(resolve =&gt; setTimeout(resolve, delay));
+var composeClick = function x(btn) {
+var rect = btn.getBoundingClientRect();
+var x = rect.left + rect.width * Math.random();
+var y = rect.top + rect.height * Math.random();
+const mousedown = new MouseEvent("mousedown", {
+screenX: x + window.screen.availLeft,
+screenY: y + window.screen.availTop,
+clientX: x,
+clientY: y,
+});
+const click = new MouseEvent("click", {
+screenX: x + window.screen.availLeft,
+screenY: y + window.screen.availTop,
+clientX: x,
+clientY: y,
+});
+const mouseup = new MouseEvent("mouseup", {
+screenX: x + window.screen.availLeft,
+screenY: y + window.screen.availTop,
+clientX: x,
+clientY: y,
+});
+btn.dispatchEvent(mousedown);
+return sleep(150 + Math.random() * 30)
+.then(() =&gt; {
+btn.dispatchEvent(click);
+return sleep(30 + Math.random() * 30);
+}).then(() =&gt; {
+btn.dispatchEvent(mouseup);
+});
+}
+
+function task() {
+var btn = document.querySelector(".continueButton");
+if (!btn) {
+alert("Finish");
+return;
+}
+composeClick(btn)
+.then(() =&gt; {
+// 在此调整点击时间间隔
+return sleep(500 + Math.random() * 6000);
+})
+.then(() =&gt; {
+task();
+});
+}
+task();</code></pre>
+<p>&nbsp;</p>
+</div></article><nav><a href="4004.html">较新：【韩都动效设计】明星达人模块交互设计</a> <a href="3811.html">较早：做个签名设计002</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>
