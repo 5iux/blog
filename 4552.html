@@ -1,0 +1,102 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>纯CSS实现描边飞入飞出 · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>纯CSS实现描边飞入飞出</h1><p class="meta">2018-08-09 · 文章 4552 · <a href="https://blog.5iux.cn/4552.html">原文</a></p><div class="content"><p>&nbsp;</p>
+<p>忽然的想法，想写个纯CSS的飞入飞出效果</p>
+<p><!--more--></p>
+<p>&nbsp;</p>
+<h2>效果图：</h2>
+<p>&nbsp;</p>
+<p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-4553" src="4552/1272cb449219-2018080918264283.gif" alt="" width="800" height="600" srcset="4552/b57bd4dc1df0-2018080918264283.gif 800w, 4552/faa884d83bf4-2018080918264283-768x576.gif 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /></p>
+<p>&nbsp;</p>
+<h2>html代码：</h2>
+<pre class="pure-highlightjs"><code class="html">&lt;style&gt;
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        background: #f0f0f0;
+        color: #000;
+    }
+
+    div {
+        width: 240px;
+        height: 60px;
+        padding: 70px 30px;
+        cursor: pointer;
+        box-shadow: 0 15px 10px #ddd;
+        background: #fff;
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transition: 1s all linear;
+    }
+
+    div:hover {
+        top: -50px;
+    }
+
+    i {
+        display: block;
+        height: 5px;
+        background: #000;
+        width: 0;
+        position: absolute;
+        z-index: 10;
+        top: 0;
+    }
+
+    i.i01 {
+        transition: 0;
+        left: 0;
+    }
+
+    div:hover i.i01 {
+        width: 100%;
+        transition: 0.5s all linear;
+    }
+
+    i.i02 {
+        transition: 0.5s all linear;
+        right: 0;
+    }
+
+    div:hover i.i02 {
+        width: 100%;
+        transition: 0s all 0.5s linear;
+    }
+
+    i.i03 {
+        width: 100%;
+        left: 0;
+        background: #f90;
+        z-index: 5;
+    }
+
+    span {
+        display: block;
+        width: 100%;
+        line-height: 30px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .text {
+        font-size: 14px;
+        color: #999;
+    }
+    &lt;/style&gt;
+    &lt;div&gt;
+        &lt;i class="i01"&gt;&lt;/i&gt;
+        &lt;i class="i02"&gt;&lt;/i&gt;
+        &lt;i class="i03"&gt;&lt;/i&gt;
+        &lt;span class="title"&gt;Just title&lt;/span&gt;
+        &lt;span class="text"&gt;This is a text.&lt;/span&gt;
+    &lt;/div&gt;</code></pre>
+<p>&nbsp;</p>
+</div></article><nav><a href="4566.html">较新：【韩都动效设计】微信商城GIF动效</a> <a href="4548.html">较早：#笔记# jquery追加元素的几种方法</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>

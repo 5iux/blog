@@ -1,0 +1,38 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>几行代码实现谷歌百度搜索对比 · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>几行代码实现谷歌百度搜索对比</h1><p class="meta">2018-05-15 · 文章 4322 · <a href="https://blog.5iux.cn/4322.html">原文</a></p><div class="content"><blockquote><p>想写一个谷歌百度搜索结果对比的工具，发现谷歌无法套用框架，于是简单写了个弹窗对比，需要的可以试试</p></blockquote>
+<p>&nbsp;</p>
+<p><img decoding="async" class="size-full wp-image-4325 alignnone" src="4322/9da5d4c25b15-2018051510564551.jpg" alt="" width="800" srcset="4322/dee04e29483c-2018051510564551.jpg 1912w, 4322/a40626bfb05e-2018051510564551-768x417.jpg 768w" sizes="(max-width: 1912px) 100vw, 1912px" /></p>
+<h2>HTML代码：</h2>
+<p>&nbsp;</p>
+<pre class="pure-highlightjs"><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;谷百对比&lt;/title&gt;
+    &lt;script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+    $(document).ready(function() {
+        $(".btn").click(function(event) {
+            var w = window.screen.availWidth
+            var h = window.screen.availHeight;
+            var p = $(".p").val();
+            window.open("https://www.google.com/search?hl=zh&amp;q=" + p, "_blank", "toolbar=no, location=no, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=no, width=" + w / 2 + ",left=" + w / 2 + ", height=" + h);
+            window.open("https://www.baidu.com/s?ie=utf-8&amp;word=" + p, "_blank", "toolbar=no, location=no, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=no, width=" + w / 2 + ",left=0, height=" + h);
+        });
+    });
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;input class="p" type="text" value="" placeholder="谷歌百度对比搜索"&gt;
+    &lt;input class="btn" type="button" value="点击搜索"&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<p>&nbsp;</p>
+<h2>demo：</h2>
+<p>&nbsp;</p>
+<p><a href="https://cdn.jsdelivr.net/gh/5iux/dyimg/blog/2018/05/2018110614583346.html" target="_blank" rel="noopener">点击查看&gt;&gt;</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div></article><nav><a href="4392.html">较新：【韩都动效设计】海报动态图</a> <a href="4309.html">较早：FDM 中文版 &#8211; 替代迅雷最佳免费下载工具软件</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>

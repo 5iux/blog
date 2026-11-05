@@ -1,0 +1,131 @@
+location
+fail
+silent
+show-error
+ssl-revoke-best-effort
+connect-timeout = 12
+max-time = 120
+retry = 1
+remove-on-error
+url = "https://p.ananas.chaoxing.com/star3/origin/3d407f0203266808b8d82196d888b15f.png"
+output = "5047/fb0325291ada-3d407f0203266808b8d82196d888b15f.png"
+next
+location
+fail
+silent
+show-error
+ssl-revoke-best-effort
+connect-timeout = 12
+max-time = 120
+retry = 1
+remove-on-error
+url = "https://p.ananas.chaoxing.com/star3/origin/c7d7c1539685c9ac128e5507224188ab.png"
+output = "5047/dbe057eb46ed-c7d7c1539685c9ac128e5507224188ab.png"
+next
+location
+fail
+silent
+show-error
+ssl-revoke-best-effort
+connect-timeout = 12
+max-time = 120
+retry = 1
+remove-on-error
+url = "https://p.ananas.chaoxing.com/star3/origin/61df3c0bca276177c0f29760a053588e.png"
+output = "5047/acf19a274516-61df3c0bca276177c0f29760a053588e.png"
+next
+location
+fail
+silent
+show-error
+ssl-revoke-best-effort
+connect-timeout = 12
+max-time = 120
+retry = 1
+remove-on-error
+url = "https://p.ananas.chaoxing.com/star3/origin/4e22be65d3f0f4ffdbec7dedf76f814b.png"
+output = "5047/c65946a66bc7-4e22be65d3f0f4ffdbec7dedf76f814b.png"
+next
+location
+fail
+silent
+show-error
+ssl-revoke-best-effort
+connect-timeout = 12
+max-time = 120
+retry = 1
+remove-on-error
+url = "https://p.ananas.chaoxing.com/star3/origin/317a6389df85474e6f1a5dbfcbb7c8d3.png"
+output = "5047/90bbe256b8e7-317a6389df85474e6f1a5dbfcbb7c8d3.png"
+next
+location
+fail
+silent
+show-error
+ssl-revoke-best-effort
+connect-timeout = 12
+max-time = 120
+retry = 1
+remove-on-error
+url = "https://p.ananas.chaoxing.com/star3/origin/a1a2253690fb83ceefaa6d3682547d6d.png"
+output = "5047/7d1835cea469-a1a2253690fb83ceefaa6d3682547d6d.png"
+next
+location
+fail
+silent
+show-error
+ssl-revoke-best-effort
+connect-timeout = 12
+max-time = 120
+retry = 1
+remove-on-error
+url = "https://p.ananas.chaoxing.com/star3/origin/e7d115887abb7617fdab063e5c74d283.png"
+output = "5047/a46d7a5759e6-e7d115887abb7617fdab063e5c74d283.png"
+next
+location
+fail
+silent
+show-error
+ssl-revoke-best-effort
+connect-timeout = 12
+max-time = 120
+retry = 1
+remove-on-error
+url = "https://p.ananas.chaoxing.com/star3/origin/7c7f43241f2ba7a5e04b85d91b2bcce3.png"
+output = "5047/20de17957d8c-7c7f43241f2ba7a5e04b85d91b2bcce3.png"
+next
+location
+fail
+silent
+show-error
+ssl-revoke-best-effort
+connect-timeout = 12
+max-time = 120
+retry = 1
+remove-on-error
+url = "https://p.ananas.chaoxing.com/star3/origin/ab2b709885141c1abdc1ec48eea32902.png"
+output = "5047/0019293fd91a-ab2b709885141c1abdc1ec48eea32902.png"
+next
+location
+fail
+silent
+show-error
+ssl-revoke-best-effort
+connect-timeout = 12
+max-time = 120
+retry = 1
+remove-on-error
+url = "https://p.ananas.chaoxing.com/star3/origin/c56a3aeefc4ec023573d602cc72cd959.png"
+output = "5047/5da95472d84e-c56a3aeefc4ec023573d602cc72cd959.png"
+next
+location
+fail
+silent
+show-error
+ssl-revoke-best-effort
+connect-timeout = 12
+max-time = 120
+retry = 1
+remove-on-error
+url = "https://blog.5iux.cn/wp-content/uploads/2019/08/1565053273-2562-75c0ac38500c289.jpg"
+output = "4826/d5c463c2d04a-1565053273-2562-75c0ac38500c289.jpg"

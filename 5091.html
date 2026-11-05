@@ -1,0 +1,20 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>#笔记#谷歌浏览器Software Reporter Tool长时间占用CPU解决办法 · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>#笔记#谷歌浏览器Software Reporter Tool长时间占用CPU解决办法</h1><p class="meta">2021-04-10 · 文章 5091 · <a href="https://blog.5iux.cn/5091.html">原文</a></p><div class="content"><h2>什么是Software Reporter Tool</h2>
+<p>Software Reporter Tool是一个Chrome清理工具,用于清理谷歌浏览器中不必要或恶意的扩展，应用程序，劫持开始页面等等。当你安装Chrome时，Software_reporter_tool.exe也j就会被下载在SwReporter文件夹下的Chrome应用数据文件夹中。</p>
+<h2>如何关闭SRT</h2>
+<p>这个软件在运行的过程中可能会长时间地占用CPU，导致高CPU使用率。我们虽然可以通过任务管理器手动结束进程或者选择删除SRT，但这都不是长久的解决办法。因为前者过一段时间它又会再次运行，后者在浏览器更新的时候就又会重新被下载下来。要完美地解决这一个问题我们可以进入SRT目录，默认它位于以下目录</p>
+<p>C:\Users\[YourName]\AppData\Local\Google\Chrome\User Data\SwReporter\[版本]\software_reporter_tool.exe</p>
+<p>我们还可以通过<code>win+r</code>键打开运行命令窗口并输入以下命令快速找到它</p>
+<p>%localappdata%\Google\Chrome\User Data\SwReporter</p>
+<p><img decoding="async" src="5091/f762295184d5-153882-20190107141835736-1031262278.jpg" alt="" /></p>
+<p>&nbsp;</p>
+<p>1.右键单击software_reporter_tool.exe选择属性<br />
+2.转到“安全”选项卡<br />
+<img decoding="async" src="5091/6a517af2d276-153882-20190107141852717-999105915.jpg" alt="" /><br />
+3.点击“高级”<br />
+4.点击“禁用继承”<br />
+5.选择"从此对象中删除所有继承的权限",之后一路点击“确定”“确定”。</p>
+<p>这样就没有人可以访问SwReporter文件夹并启动Software Reporter Tool了。、</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>原文地址：https://www.cnblogs.com/ShaYeBlog/p/10224349.html</p>
+</div></article><nav><a href="5099.html">较新：新版chrome的iframe嵌套的页面无法显示登录状态</a> <a href="5047.html">较早：前端JS/CSS静态资源公共库免费CDN加速汇总</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>

@@ -1,0 +1,135 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>#笔记# jquery追加元素的几种方法 · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>#笔记# jquery追加元素的几种方法</h1><p class="meta">2018-08-08 · 文章 4548 · <a href="https://blog.5iux.cn/4548.html">原文</a></p><div class="content"><p>&nbsp;</p>
+<blockquote>
+<p class="title-article">jquery追加元素的几种方法（append()、prepend()、after()、before()、insertAfter()、insertBefore()）</p>
+</blockquote>
+<p>&nbsp;</p>
+<p><!--more--></p>
+<p>&nbsp;</p>
+<h2>代码：</h2>
+<p>&nbsp;</p>
+<pre class="pure-highlightjs"><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8"&gt;
+		&lt;title&gt;js中常用追加元素的几种方法&lt;/title&gt;
+		&lt;style&gt;
+			.container {
+				width: 1200px;
+				padding: 10px;
+				margin: 50px auto;
+				border: 1px solid lightcoral;
+			}
+			#wrap{
+				border: 1px solid lightseagreen;
+			}			
+			.container p{
+				height: 30px;
+				line-height: 30px;
+			}
+			.btn-group{
+				margin-top: 20px;
+			}
+			button{
+				width: 80px;
+				height: 32px;
+				margin-right: 10px;
+				line-height: 32px;
+				text-align: center;
+				border: 0px;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div class="container"&gt;
+			&lt;div id="wrap"&gt;
+				&lt;p class="first"&gt;我是第一个子元素&lt;/p&gt;
+				&lt;p class="second"&gt;我是第二个子元素&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class="btn-group"&gt;
+				&lt;button class="append"&gt;append&lt;/button&gt;
+				&lt;button class="appendTo"&gt;appendTo&lt;/button&gt;
+				&lt;button class="prepend"&gt;prepend&lt;/button&gt;
+				&lt;button class="prependTo"&gt;prependTo&lt;/button&gt;
+				&lt;button class="after"&gt;after&lt;/button&gt;
+				&lt;button class="before"&gt;before&lt;/button&gt;
+				&lt;button class="appendChild" onclick="appChild()"&gt;appendChild&lt;/button&gt;
+				&lt;button class="insertAfter"&gt;insertAfter&lt;/button&gt;
+				&lt;button class="insertBefore"&gt;insertBefore&lt;/button&gt;
+			&lt;/div&gt;
+			
+		&lt;/div&gt;
+		
+	&lt;/body&gt;
+&lt;/html&gt;
+&lt;script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+	$(function(){
+		//append(),在父级最后追加一个子元素
+		$(".append").click(function(){
+			$("#wrap").append("&lt;p class='three'&gt;我是子元素append&lt;/p&gt;");
+		});
+		
+		//appendTo(),将子元素追加到父级的最后
+		$(".appendTo").click(function(){
+			$("&lt;p class='three'&gt;我是子元素appendTo&lt;/p&gt;").appendTo($("#wrap"));
+		});
+		
+		//prepend(),在父级最前面追加一个子元素
+		$(".prepend").click(function(){
+			$("#wrap").prepend("&lt;p class='three'&gt;我是子元素prepend&lt;/p&gt;");
+		});
+		
+		//prependTo(),将子元素追加到父级的最前面
+		$(".prependTo").click(function(){
+			$("&lt;p class='three'&gt;我是子元素prependTo&lt;/p&gt;").prependTo($("#wrap"));
+		});
+		
+		//after(),在当前元素之后追加（是同级关系）
+		$(".after").click(function(){
+			$("#wrap").after("&lt;p class='siblings'&gt;我是同级元素after&lt;/p&gt;");
+		});
+		
+		//before(),在当前元素之前追加（是同级关系）
+		$(".before").click(function(){
+			$("#wrap").before("&lt;p class='siblings'&gt;我是同级元素before&lt;/p&gt;");
+		});
+		
+		//insertAfter(),将元素追加到指定对象的后面（是同级关系）
+		$(".insertAfter").click(function(){
+			$("&lt;p class='three'&gt;我是同级元素insertAfter&lt;/p&gt;").insertAfter($("#wrap"));
+		});
+		//insertBefore(),将元素追加到指定对象的前面（是同级关系）
+		$(".insertBefore").click(function(){
+			$("&lt;p class='three'&gt;我是同级元素insertBefore&lt;/p&gt;").insertBefore($("#wrap"));
+		});
+	});	
+	
+	//appendChild(),在节点的最后追加子元素
+	function appChild(){
+			// 创建p节点
+			var para=document.createElement("p");
+			// 创建文本节点
+			var node=document.createTextNode("我是子集appendChild新段落。");
+			// 把文本节点添加到p节点里
+			para.appendChild(node);
+			 
+			// 查找div1
+			var element=document.getElementById("wrap");
+			// 把p节点添加到div1里
+			element.appendChild(para);
+	}
+&lt;/script&gt;
+</code></pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>以下是单击每个按钮之后的效果</h2>
+<p>&nbsp;</p>
+<p><a href="4548/5209afb379c4-1533694563-8990-.png" data-fancybox="images" ><img loading="lazy" decoding="async" class="attachment-medium size-medium" src="4548/5209afb379c4-1533694563-8990-.png" sizes="auto, (max-width: 927px) 100vw, 927px" srcset="4548/5209afb379c4-1533694563-8990-.png 927w, 4548/d1b4c836d4b6-1533694563-8990--768x361.png 768w" alt="" width="927" height="436" /></a></p>
+<p>&nbsp;</p>
+<h2>查看demo：</h2>
+<p>&nbsp;</p>
+<blockquote><p><a href="https://cdn.jsdelivr.net/gh/5iux/dyimg/blog/2018/08/2018080810181378.html" target="_blank" rel="noopener">&gt;DEMO&lt;&lt;</a></p></blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>原文：https://blog.csdn.net/xiangxiangw29/article/details/52460563</p>
+</div></article><nav><a href="4552.html">较新：纯CSS实现描边飞入飞出</a> <a href="4542.html">较早：【韩都动效设计】红包领取页面h5</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>

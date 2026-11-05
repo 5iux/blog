@@ -1,0 +1,38 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>#笔记#如何恢复谷歌Chrome 地址栏隐藏的HTTPS和WWWS标记？ · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>#笔记#如何恢复谷歌Chrome 地址栏隐藏的HTTPS和WWWS标记？</h1><p class="meta">2019-08-06 · 文章 4826 · <a href="https://blog.5iux.cn/4826.html">原文</a></p><aside class="archive-notice">本页有 1 个原始媒体链接已失效或拒绝访问，未能保存。详见 <a href="archive-report.md">归档报告</a>。</aside><div class="content"><div class="article-summary">
+<blockquote><p>几天前正式推出的谷歌Chrome 76版本带来了许多新的特性和改进，但是也有一些相当有争议的变化。谷歌决定默认隐藏浏览器地址栏中的HTTPS和WWWS标记，以增强“UI界面的简洁性，可用性和安全性”，这多少让一些用户觉得不太习惯，其实有很多简单的方法可以恢复原来的HTTPS和WWW显示。</p></blockquote>
+</div>
+<h2><span style="color: #ff0000;">新版本</span></h2>
+<p><code>Chrome 79</code> 已经不支持 <code>chrome://flags</code> 方式了, 这里使用 <code>插件</code> 方法, 安装 <code>Suspicious Site Reporter</code> , 如果您有更好的方法, 请留言</p>
+<p>安装 <code>Suspicious Site Reporter</code> 插件后, 即可显示 <code>https://www</code></p>
+<p>安装地址：<a href="https://chrome.google.com/webstore/detail/suspicious-site-reporter/jknemblkbdhdcpllfgbfekkdciegfboi" target="_blank" rel="noopener noreferrer">点击跳转到应用商店</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>下方是旧版</h2>
+<div id="artibody" class="article-content">
+<h2><a href="4826/185d4bbf0ade-1565053273-1877-3bf5fd22a408eaa.jpg" data-fancybox="images" ><img loading="lazy" decoding="async" class="attachment-medium size-medium" src="4826/185d4bbf0ade-1565053273-1877-3bf5fd22a408eaa.jpg" sizes="auto, (max-width: 1136px) 100vw, 1136px" srcset="4826/185d4bbf0ade-1565053273-1877-3bf5fd22a408eaa.jpg 1136w, 4826/67059f2d8a38-1565053273-1877-3bf5fd22a408eaa-768x518.jpg 768w" alt="" width="1136" height="766" /></a></h2>
+<p>Chrome开发团队成员Emily Schechter 解释说，最初目的是让URL“更易于阅读和理解，并消除可注册域名的干扰。”</p>
+<p>这不是谷歌第一次推动这样的改变，该公司最初计划在2018年秋季剔除这两个元素。不过谷歌随后决定将WWW和HTTPS保持一段时间，主要是全球各地用户对由此产生的混淆的抱怨。</p>
+<p>然而，在Chrome 76中谷歌却十分坚持推进这一变化，Schechter解释说这种做法已经在Canary，Dev和Beta版本的一部分进行了几个月的测试。</p>
+<p>但正如预期的那样，许多人是使用WWW和HTTPS标记的URL的忠实粉丝，他们已经在寻找恢复此更改的方法。</p>
+<p><a href="4826/8dedab94a414-1565053273-8550-84bd0af6b3db35c.jpg" data-fancybox="images" ><img loading="lazy" decoding="async" class="attachment-medium size-medium" src="4826/8dedab94a414-1565053273-8550-84bd0af6b3db35c.jpg" sizes="auto, (max-width: 1562px) 100vw, 1562px" srcset="4826/8dedab94a414-1565053273-8550-84bd0af6b3db35c.jpg 1562w, 4826/c28995b76c62-1565053273-8550-84bd0af6b3db35c-768x240.jpg 768w" alt="" width="1562" height="489" /></a></p>
+<p><strong>首先，通过双击地址栏你就可以看到完整的URL。</strong></p>
+<p><strong>此外，谷歌也表示高级用户可以安装可疑站点报告扩展程序，以查看地址栏中的完整网址</strong>，此加载项允许用户报告他们认为可能对谷歌安全浏览有害的网站。</p>
+<p>显然，为此目的安装浏览器扩展程序对于所有人来说，并非是一个简单可行的方式。</p>
+<p>但幸运的是，有一个通过修改标记（flag）以便在地址栏中恢复URL的经典方法。要修改此标记，您需要在Chrome地址栏中输入以下内容：</p>
+<blockquote><p><code>chrome://flags</code></p></blockquote>
+<p>然后搜索：</p>
+<blockquote><p><code>Omnibox UI Hide Steady-State URL Trivial Subdomains</code></p></blockquote>
+<p>作为快捷方式，您只需复制以下链接并将其粘贴到地址栏中即可：</p>
+<blockquote><p><code>chrome://flags/#omnibox-ui-hide-steady-state-url-trivial-subdomains</code></p></blockquote>
+<p>谷歌Chrome 76附带此标志设置为默认值，这意味着它已<em><strong>启用</strong></em>。因此，单击下拉菜单并将其切换为<em><strong>禁用</strong></em>。保存更改后，需要重新启动浏览器。</p>
+<p><a href="4826/d5c463c2d04a-1565053273-2562-75c0ac38500c289.jpg" data-fancybox="images" ><img loading="lazy" decoding="async" class="attachment-medium size-medium" src="4826/d5c463c2d04a-1565053273-2562-75c0ac38500c289.jpg" alt="" width="743" height="385" /></a></p>
+<p>基于Chromium的同名浏览器开发商Vivaldi表示，Google的新方法既好又坏，应该允许用户选择他们想要的方式，Vivaldi则允许用户自行选择。</p>
+<p>Vivaldi 说：</p>
+<blockquote><p>剔除”www“ 可能会混淆用户，用户几乎不可能识别example.com和example.com之间的区别，如果它们提供不同的内容。</p>
+<p>另一方面，“https：//”可能会被用户误解，暗示连接是“受信任”，“安全”，“非恶意”或其他任何内容。使用HTTPS不会让链接变得安全，因为HTTPS网站仍然无法通过大量安全检查，“</p></blockquote>
+<p>其他基于Chromium的浏览器开发者尚未接受Google的想法，也不知道谷歌是否会在后续版本中进行更改。</p>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>原文地址：https://www.cnbeta.com/articles/tech/874245.htm</p>
+</div></article><nav><a href="4830.html">较新：#笔记#自定义git.io短链</a> <a href="4819.html">较早：换个头像</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>

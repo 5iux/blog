@@ -1,0 +1,91 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>纯CSS实现彩虹loading动画 · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>纯CSS实现彩虹loading动画</h1><p class="meta">2018-10-24 · 文章 4601 · <a href="https://blog.5iux.cn/4601.html">原文</a></p><div class="content"><blockquote><p>在Pinterest上看到一张loading图，如下，忽然想把它用css写出来，于是就写了。。。</p>
+<p>可能实现效果不一定完全一模一样，权当是娱乐了。</p></blockquote>
+<p><!--more--></p>
+<p>&nbsp;</p>
+<h2>原图：</h2>
+<p>&nbsp;</p>
+<p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-4600" src="4601/c0b2fec501fa-2018102408472552.gif" alt="" width="400" height="400" /></p>
+<p>&nbsp;</p>
+<h2>实现后效果（完整见页尾）：</h2>
+<p>&nbsp;</p>
+<p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-4599" src="4601/a743c9d6aa5b-2018102408471450.gif" alt="" width="750" height="360" /></p>
+<p>&nbsp;</p>
+<h2>代码实现：</h2>
+<p>&nbsp;</p>
+<h3>1.html部分</h3>
+<p>&nbsp;</p>
+<pre class="pure-highlightjs"><code class="null">	&lt;div class="ccle"&gt;
+		&lt;b&gt;&lt;span&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/b&gt;
+		&lt;b&gt;&lt;span&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/b&gt;
+		&lt;b&gt;&lt;span&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/b&gt;
+		&lt;b&gt;&lt;span&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/b&gt;
+		&lt;b&gt;&lt;span&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/b&gt;
+		&lt;b&gt;&lt;span&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/b&gt;
+		&lt;b&gt;&lt;span&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/b&gt;
+		&lt;b&gt;&lt;span&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/b&gt;
+	&lt;/div&gt;
+</code></pre>
+<p>&nbsp;</p>
+<h3>2.CSS部分：</h3>
+<p>&nbsp;</p>
+<pre class="pure-highlightjs"><code class="css">		*{ padding: 0; margin: 0 }
+		html,body{ width: 100%; height: 100%; overflow: hidden; background: #333; }
+		.ccle{ width:260px; height: 260px; position: absolute; z-index: 10; left: 0; right: 0; top: 0; bottom: 0; margin: auto; }
+		b{  overflow: hidden; display: block; position: absolute;left: 0; right: 0; top:0; bottom: 0; margin: auto; }
+		b span{ display: block; width: 100%; height: 50%; float: left; overflow: hidden; }
+		b i{border-radius: 50%; display: block; width: calc(100% - 16px); height: calc(200% - 16px); float: left; border-width: 8px; border-style: solid;  }
+		b:nth-child(1){ width: 100%; height: 100%;  animation: ccle8 2.5s ease-in-out infinite;}
+		b:nth-child(1) i{ border-color: #629;}
+		b:nth-child(2){ width: calc(100% - 30px); height: calc(100% - 30px);   animation: ccle7 2.5s ease-in-out infinite;}
+		b:nth-child(2) i{ border-color: #c28;}
+		b:nth-child(3){ width: calc(100% - 60px); height: calc(100% - 60px);   animation: ccle6 2.5s ease-in-out infinite; }
+		b:nth-child(3) i{ border-color: #e25;}
+		b:nth-child(4){ width: calc(100% - 90px); height: calc(100% - 90px);   animation: ccle5 2.5s ease-in-out infinite;}
+		b:nth-child(4) i{ border-color: #f53;}
+		b:nth-child(5){ width: calc(100% - 120px); height: calc(100% - 120px);   animation: ccle4 2.5s ease-in-out infinite;}
+		b:nth-child(5) i{ border-color: #fb2;}
+		b:nth-child(6){ width: calc(100% - 150px); height: calc(100% - 150px);   animation: ccle3 2.5s ease-in-out infinite;}
+		b:nth-child(6) i{ border-color: #8c4;}
+		b:nth-child(7){ width: calc(100% - 180px); height: calc(100% - 180px);   animation: ccle2 2.5s ease-in-out infinite;}
+		b:nth-child(7) i{ border-color: #0a9;}
+		b:nth-child(8){ width: calc(100% - 210px); height: calc(100% - 210px);   animation: ccle1 2.5s ease-in-out infinite; }
+		b:nth-child(8) i{ border-color: #17b;}
+		@keyframes ccle1{
+			0% { transform: rotate(0deg); }				
+			100% {transform: rotate(360deg);}
+		}
+		@keyframes ccle2{
+			0% { transform: rotate(0deg); }				
+			100% {transform: rotate(720deg);}
+		}
+		@keyframes ccle3{
+			0% { transform: rotate(0deg); }				
+			100% {transform: rotate(1080deg);}
+		}
+		@keyframes ccle4{
+			0% { transform: rotate(0deg); }				
+			100% {transform: rotate(1440deg);}
+		}
+		@keyframes ccle5{
+			0% { transform: rotate(0deg); }				
+			100% {transform: rotate(1800deg);}
+		}
+		@keyframes ccle6{
+			0% { transform: rotate(0deg); }				
+			100% {transform: rotate(2160deg);}
+		}
+		@keyframes ccle7{
+			0% { transform: rotate(0deg); }				
+			100% {transform: rotate(2520deg);}
+		}
+		@keyframes ccle8{
+			0% { transform: rotate(0deg); }				
+			100% {transform: rotate(2880deg);}
+		}
+</code></pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>完整demo：</h2>
+<p>&nbsp;</p>
+<p><a href="https://cdn.jsdelivr.net/gh/5iux/dyimg/blog/2018/10/2018102409045199.html" target="_blank" rel="noopener"><span style="color: #ff0000;"><strong>&gt;&gt;点击查看&lt;&lt;</strong></span></a></p>
+</div></article><nav><a href="4605.html">较新：纯CSS液态形状动画</a> <a href="4575.html">较早：#笔记#原来 CSS 与 JS 是这样阻塞 DOM 解析和渲染的</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>

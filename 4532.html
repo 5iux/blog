@@ -1,0 +1,70 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>手机端chrome还是很好用的【美化去广告推荐】 · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>手机端chrome还是很好用的【美化去广告推荐】</h1><p class="meta">2018-07-16 · 文章 4532 · <a href="https://blog.5iux.cn/4532.html">原文</a></p><div class="content"><p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-4535" src="4532/3e63919ce4c4-2018071613354367.gif" alt="" width="500" height="200" /></p>
+<p>&nbsp;</p>
+<p>适当调整下chrome界面还是不错的，这个示例是我自己手机设置的，当然主页是自己写的，很多导航类主页像hao123、hao360啥的广告太多，看着难受，想做个干净没广告的主页，所以自己动手丰衣足食，（服务器小，加载慢，就不提供共享了），调整方法在下面，可以自己设置。</p>
+<p><img decoding="async" class="aligncenter size-full wp-image-4533" src="4532/042890c79468-2018071613095030.jpg" alt="" width="450" srcset="4532/25abb4a9c580-2018071613095030.jpg 1080w, 4532/bfa5e08f713c-2018071613095030-768x1365.jpg 768w" sizes="(max-width: 1080px) 100vw, 1080px" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>下面是chrome隐藏设置，可以添加chrome主页按钮、圆角地址栏，关闭chrome推荐等等，功能自己尝试哈哈</p>
+<p><!--more--></p>
+<pre class="pure-highlightjs"><code class="javascript">DT:
+1.chrome://flags/#reader-mode-heuristics
+阅读模式的触发条件设置
+我选的是no-mobile-friendly articles
+就是非移动设备友好(忽略硬译)文章。
+
+2.chrome://flags/#enable-chrome-modern-design
+google大改的界面设计，开启沉浸模式，支持某些网站的顶栏变色，enable，重启两次。
+
+3.chrome://flags/#force-enable-home-page-button
+开启主页键，不过以后把标签页划完之后会直接关闭Chrome。enable
+
+4.chrome://flags/#num-raster-threads
+应该是多线程加速，我设置的是两条。打开这个加载应该能快一些，比单线程吃系统资源。
+
+5.chrome://flags/#enable-data-reduction-proxy-main-menu
+在右侧三点菜单栏中打开流量节省item。流量节省其实在国内没用，因为它是把网页原数据发给谷歌压缩再发给你的#(受虐滑稽)，聊胜于无。
+
+6.chrome://flags/#enable-ntp-remote-suggestions
+Disable，关闭资讯，或者你有googlenow的可以其他选项，关掉胜在清爽。
+
+7.chrome://flags/#enable-ntp-asset-download-suggestions
+打开新标签页时会显示之前下载的东西。
+
+8.chrome://flags/#enable-ntp-offline-page-download-suggestions
+新标签页显示离线的网页，也是新版未实测。
+
+9.chrome://flags/#enable-ntp-bookmark-suggestions
+新标签页显示常用网站(搜索栏底下那几个网页标签)。不过吐槽一下，这个遴选机制真的谜，用得多的从来没显示过(怕不是要T？)……
+
+10.chrome://flags/#ntp-modern-layout
+不明觉厉，新标签页现代设计布局？enable
+
+11.chrome://flags/#enable-site-exploration-ui
+网站地址建议，enable,需T，谷歌的服务#(受虐滑稽)
+
+12.chrome://flags/#ntp-google-g-in-omnibox
+enable，搜索引擎是Google时，搜索栏有个彩色的小G。
+
+13.chrome://flags/#PasswordImport
+在设置～密码中，支持密码导出。估计用不到。
+
+14.chrome://flags/#language-settings
+在设置中可以有语言选项，就像我设置的简体和繁体，翻译相关，可以不用开的，Chrome需要跟随系统语言。
+
+15.chrome://flags/#enable-custom-context-menu
+长摁Chrome网页中的超链接、文本或图片，出现传统文本菜单。enable，比如图一。
+
+16.chrome://flags/#enable-reader-mode-in-cct
+网页的阅读模式在新的经典标签页中打开。enable
+
+17.chrome://flags/#enable-parallel-downloading
+多线程下载，parallel是平行的意思，会不会是双线程？enable，加速下载，不过有ADM之流，这个不太能用上。
+
+18.chrome://flags/#enable-modern-media-controls
+某些视频网站上，这个可以是根据你的手机设置来控制视频播放，比如打开视频，手机侧倒就会全屏横向播放。未实测。
+
+19.chrome://flags/#enable-chrome-duplex
+这个，纯白色，还占地方，可以看作常用网站底栏，不过只能上下滑动，动画还不错。看各位兴趣开。</code></pre>
+<p>&nbsp;</p>
+<p style="text-align: left;">
+</div></article><nav><a href="4538.html">较新：利用chrome“开发者工具“检测网站页面载入速度</a> <a href="4524.html">较早：新logo</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>

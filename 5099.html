@@ -1,0 +1,37 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>新版chrome的iframe嵌套的页面无法显示登录状态 · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>新版chrome的iframe嵌套的页面无法显示登录状态</h1><p class="meta">2021-05-11 · 文章 5099 · <a href="https://blog.5iux.cn/5099.html">原文</a></p><div class="content"><p>最近在一个教程网站看视频，由于是引用的B站的视频，所以想看高清的版本则需要登录；</p>
+<p>本来正常登录就可以，但是发现登录完就跳转到了B站首页，但是刷新引用视频的页面后，仍然提示登录，这就有意思了。。。</p>
+<p>然后尝试了几次各种姿势的登录了后发现，旧版本的chrome内核浏览器是没问题的，新版却尴尬了。。。。</p>
+<p>&nbsp;</p>
+<p>接下来就是各种百度google了。。。。</p>
+<p><img decoding="async" class="aligncenter" src="5099/380ea695d588-20210511141932.jpg" /><br />
+于是发现问题如下：</p>
+<h2>下方描述来自CSDN:</h2>
+<p>&nbsp;</p>
+<p>查询资料发现，chrome新版本对于iframe嵌入系统的情况，不在发送嵌入系统的cookie。而该项目正是使用的iframe嵌套另外的系统。</p>
+<p>这个问题中涉及到一个知识  SameSite cookies</p>
+<p><img decoding="async" src="5099/fde634946586-43d8c0f65caf33ce349377bc1dbd8cbf.png" alt="43d8c0f65caf33ce349377bc1dbd8cbf.png" /></p>
+<p><img decoding="async" src="5099/277d157a1c17-b8a8ddae6405a3d3e3ed7492e4c73f68.png" alt="b8a8ddae6405a3d3e3ed7492e4c73f68.png" /></p>
+<p>参考资料：</p>
+<p>https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Set-Cookie/SameSite</p>
+<p>而chrome 80 将该值默认设置为了Lax。使用iframe的时候不会带第三方cookie.</p>
+<p>如果你的项目中有如下跨域场景：</p>
+<ol>
+<li>跨域的 ajax 请求；</li>
+<li>跨域嵌入的 iframe；</li>
+<li>跨域的图片资源请求；</li>
+<li>跨域的 POST FORM 表单；</li>
+</ol>
+<p>这些场景下chrome将不会携带cookie,可能您就需要注意解决了。</p>
+<p>解决方案</p>
+<p>一、 在对需要跨域发送的 cookie 进行 set-cookie 的时候，显式声明  <code>SameSite:None; Secure</code>  属性，如：</p>
+<pre class="has"><code class="hljs sql"><span class="hljs-keyword">set</span>-cookie: key1=value1; Path=/; Secure; SameSite=None</code></pre>
+<p>需要后端接口使用https</p>
+<p>二、修改浏览器配置</p>
+<pre class="has"><code class="hljs crystal"><span class="hljs-symbol">chrome:</span>/<span class="hljs-regexp">/flags/</span><span class="hljs-comment">#same-site-by-default-cookies</span></code></pre>
+<p><img decoding="async" src="5099/07970693f84e-4fa4d1b960f49b7b5cc9977e191543c0.png" alt="4fa4d1b960f49b7b5cc9977e191543c0.png" /></p>
+<p>将其设置为Disable</p>
+<p>三、修改后端代码，不使用基于cookie的认证，采用基于token的认证。这种方案可能对已有代码修改比较大，需要在每个请求后都增加token。当然如果前端代码封装得好，可以统一添加，就比较方便。如果有防CSRF攻击，那可能都不需要修改。</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div></article><nav><a href="5101.html">较新：【个人作品】AE序列小动画等</a> <a href="5091.html">较早：#笔记#谷歌浏览器Software Reporter Tool长时间占用CPU解决办法</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>

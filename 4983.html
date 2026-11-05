@@ -1,0 +1,31 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>#笔记#如何彻底禁用 win10 资源管理器的分组依据功能？ · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>#笔记#如何彻底禁用 win10 资源管理器的分组依据功能？</h1><p class="meta">2020-08-20 · 文章 4983 · <a href="https://blog.5iux.cn/4983.html">原文</a></p><div class="content"><h2>如何彻底禁用 win10 资源管理器的分组依据功能？</h2>
+<p>&nbsp;</p>
+<blockquote><p>被这功能烦死了，每次进入文件夹就给我自动分组，还得手动关掉，关键是关掉后刷新一下又恢复分组了！！！</p>
+<p>版本 1909</p>
+<p>——@ <small class="gray"><a href="https://www.v2ex.com/member/ProjectSky">ProjectSky</a></small></p></blockquote>
+<p><!--more--></p>
+<p>原文：<a href="https://www.v2ex.com/t/629634">https://www.v2ex.com/t/629634</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>解决办法由@<strong><a class="dark" href="https://www.v2ex.com/member/wxlg1117">wxlg1117</a></strong> 提供：</h2>
+<p>方法引自 <a href="https://www.tenforums.com/general-support/136903-disable-group-set-default-none-windows-10-1903-a.html" target="_blank" rel="nofollow noopener noreferrer">https://www.tenforums.com/general-support/136903-disable-group-set-default-none-windows-10-1903-a.html</a> ；</p>
+<p>大意是说微软从 1903 之后给下载目录单独设置了一个专用模板(默认开启自动分组和按修改日期排列)，而不是之前那样也是调用通用模板。。。</p>
+<p><strong>注册表找到下列键：</strong></p>
+<pre class="line-numbers ioch-code" data-lang="bash"><code class="language-bash">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderTypes\{885a186e-a440-4ada-812b-db871b942259}\TopViews\{00000000-0000-0000-0000-000000000000}</code></pre>
+<p><strong>右侧内容框修改：</strong></p>
+<p><strong>GroupBy</strong><br />
+从<br />
+<code>System.DateModified</code><br />
+改为<br />
+<code>System.Null</code></p>
+<p><strong>SortByList</strong><br />
+从<br />
+<code>prop:System.DateModified</code><br />
+改为<br />
+<code>prop:System.ItemNameDisplay</code></p>
+<p>&nbsp;</p>
+<p>以上值参考自 <a href="https://docs.microsoft.com/en-us/previous-versions//ff521735(v=vs.85)?redirectedfrom=MSDN" target="_blank" rel="nofollow noopener noreferrer">https://docs.microsoft.com/en-us/previous-versions//ff521735(v=vs.85)?redirectedfrom=MSDN</a></p>
+<p>&nbsp;</p>
+<p>出现“编辑值错误 – 无法编辑：写入值的新内容时出错”错误。参考下文获得权限。<br />
+<a href="https://vrshendeng.com/369.html" target="_blank" rel="nofollow noopener noreferrer">https://vrshendeng.com/369.html</a></p>
+</div></article><nav><a href="4988.html">较新：使用hosts打开pinterest的大门【方法可用，仅限pin、be】</a> <a href="4972.html">较早：我的垃圾代码去污染北极了</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>

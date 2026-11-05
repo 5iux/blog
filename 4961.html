@@ -1,0 +1,47 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>网页简单css模糊毛玻璃背景效果 · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>网页简单css模糊毛玻璃背景效果</h1><p class="meta">2020-07-01 · 文章 4961 · <a href="https://blog.5iux.cn/4961.html">原文</a></p><div class="content"><p>刷dribbble看到一个不错的UI界面：<a href="https://dribbble.com/shots/7400171-Fitness-App" target="_blank" rel="noopener noreferrer">Fitness App</a></p>
+<p>习惯性的先采集到pinterest，然后。。。。要不要写一下试试</p>
+<p><img loading="lazy" decoding="async" class="aligncenter" style="max-width: 640px;" src="4961/6ec847aa1c33-xGn3tzB4eyFvj8P.png" alt="" width="1600" height="1200" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>然后就写了一个，很简单看下吧</p>
+<h2>CSS部分：</h2>
+<pre class="line-numbers ioch-code" data-lang="css"><code class="language-css">* {
+    padding: 0;
+    margin: 0;
+    outline: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: url("https://cdn.5iux.cn/pic/20200624092748.jpg") no-repeat center/cover;
+}
+
+.content {
+    float: left;
+    width: calc(100% - 160px);
+    height: calc(100% - 160px);
+    margin: 80px;
+    overflow: hidden;
+    border-radius: 40px;
+    box-shadow: 0 0 80px #555;
+}
+
+.bg {
+    float: left;
+    width: calc(100% + 160px);
+    height: calc(100% + 160px);
+    margin: -80px 0 0 -80px;
+    background: url("https://cdn.5iux.cn/pic/20200624092748.jpg") no-repeat center/cover;
+    filter: blur(20px);
+}</code></pre>
+<p>&nbsp;</p>
+<h2>HTML：</h2>
+<pre class="line-numbers ioch-code" data-lang="markup"><code class="language-markup">&lt;div class="content"&gt;
+    &lt;div class="bg"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>&nbsp;</p>
+<h2>示例页面：</h2>
+<p><a href="https://blog.5iux.cn/wp-content/uploads/2020/07/1593597463-index.html" target="_blank" rel="noopener noreferrer">点击查看&gt;&gt;</a></p>
+</div></article><nav><a href="4968.html">较新：我。。。又写了个导航。。【源码共享了】</a> <a href="4946.html">较早：想重做个博客主页</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>

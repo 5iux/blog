@@ -1,0 +1,40 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>#笔记#自定义git.io短链 · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>#笔记#自定义git.io短链</h1><p class="meta">2019-08-06 · 文章 4830 · <a href="https://blog.5iux.cn/4830.html">原文</a></p><div class="content"><p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-4831" src="4830/a0feb009e9a6-2019080611211347.jpg" alt="" width="700" height="263" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><em>Git</em>.<em>io</em> 是GitHub 站内链接的短网址服务，可以直接在网页上生成短链接，也可以用通过命令端完成。</p>
+<p>下面是自定义方式</p>
+<p>&nbsp;</p>
+<p>自定义短链代码示例：</p>
+<pre class="lang:default decode:true">curl -i https://git.io -F "url=https://github.com/5iux/youhua/raw/master/youhua.user.js" -F "code=youhua"</pre>
+<p>格式为：</p>
+<pre class="lang:default decode:true">curl -i https://git.io -F "url=想要被缩短的网址" -F "code=自定义数值"</pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>终端运行后：</p>
+<pre class="line-numbers ioch-code" data-lang="bash"><code class="language-bash">curl -i https://git.io -F "url=https://github.com/5iux/youhua/raw/master/youhua.user.js" -F "code=youhua"
+HTTP/1.1 100 Continue
+
+HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+Date: Tue, 06 Aug 2019 03:10:35 GMT
+Status: 201 Created
+Content-Type: text/html;charset=utf-8
+Location: https://git.io/youhua
+Content-Length: 56
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Runtime: 0.288247
+X-Node: 3ba095ff-edc9-4674-bb92-0ade15288e9e
+X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur
+
+https://github.com/5iux/youhua/raw/master/youhua.user.js
+</code></pre>
+<p>&nbsp;</p>
+<p>生成的短链为：<br />
+<a href="https://git.io/youhua" target="_blank" rel="noopener noreferrer">https://git.io/youhua</a></p>
+</div></article><nav><a href="4839.html">较新：拿到 Dribbble 邀请了，纪念下</a> <a href="4826.html">较早：#笔记#如何恢复谷歌Chrome 地址栏隐藏的HTTPS和WWWS标记？</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>

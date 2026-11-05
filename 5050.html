@@ -1,0 +1,23 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>#笔记#纯静态页简单获取URL参数 · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>#笔记#纯静态页简单获取URL参数</h1><p class="meta">2020-11-30 · 文章 5050 · <a href="https://blog.5iux.cn/5050.html">原文</a></p><div class="content"><p>纯静态页简单获取URL参数</p>
+<p><img decoding="async" src="5050/c9407591e88d-20201130132742.jpg" alt="纯静态页简单获取URL参数" /></p>
+<p>&nbsp;</p>
+<p><!--more--><br />
+具体方法：<br />
+js获取URL的参数的方法(getQueryString)</p>
+<h2>代码示例：</h2>
+<pre class="line-numbers ioch-code" data-lang="markup"><code class="language-markup">&lt;script&gt;
+function getQueryString(name) {
+    var reg = new RegExp("(^|&amp;)" + name + "=([^&amp;]*)(&amp;|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return decodeURIComponent(r[2]);
+    }
+    return '';
+}
+var value = getQueryString("key");
+alert(value);
+&lt;/script&gt;</code></pre>
+<h2>URL示例：</h2>
+<p><code>http://5iux.cn/?key=abc</code></p>
+<p>输出<code>abc</code></p>
+</div></article><nav><a href="5047.html">较新：前端JS/CSS静态资源公共库免费CDN加速汇总</a> <a href="5012.html">较早：简单尝试下ps中的3D动画</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>

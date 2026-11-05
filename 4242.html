@@ -1,0 +1,38 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>#笔记#Linux网络优化加速一键脚本 · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>#笔记#Linux网络优化加速一键脚本</h1><p class="meta">2018-04-17 · 文章 4242 · <a href="https://blog.5iux.cn/4242.html">原文</a></p><div class="content"><blockquote><p>本博客在此只做一个转载，感谢作者写出的一键脚本，让更多人方便的干活。 本文转自94ish.me</p></blockquote>
+<p>&nbsp;</p>
+<p>在之前的文章里我说过：<strong>对于出口带宽，我们常常采用BBR，锐速等TCP加速软件来争夺带宽提高自己的速度。</strong></p>
+<p>但是原版的BBR并没有太多<strong>侵略性</strong>，在这个<em>人人都用</em>TCP加速的大环境下，BBR的加速功效就略显不足了。loc的大佬专门改进了下这个BBR，使BBR具有了侵略性。</p>
+<p>最近我也连续购买了几个服务器，每次都手动搭建，感觉到十分麻烦，干脆写个脚本吧。由于是<strong>第一次</strong>接触shell脚本这一方面的内容，写起来感觉十分<em>吃力</em>，且与一般的高级语言语法~~差别有些大~~。所有有些不足的地方欢迎在下方评论反馈。</p>
+<p>同时也加入了<strong>锐速一键换内核</strong>，<strong>锐速一键安装</strong>，<strong>自动根据vps情况优化锐速参数</strong>，<strong>一键优化内核参数</strong>。</p>
+<p>也可以在锐速，BBR，BBR魔改版中自由切换。</p>
+<div data-unique="一键脚本"></div>
+<h2>一键脚本</h2>
+<p><a href="4242/12d92fc73d48-1523932193-4922-11.png" data-fancybox="images" ><img decoding="async" class="attachment-medium size-medium" src="4242/12d92fc73d48-1523932193-4922-11.png" /></a></p>
+<p>&nbsp;</p>
+<pre class="pure-highlightjs"><code class="bash">wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh"
+chmod +x tcp.sh
+./tcp.sh</code></pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>脚本说明</h2>
+<blockquote><p>支持系统<br />
+Centos 6+ / Debian 7+ / Ubuntu 14+<br />
+BBR魔改版不支持Debian 8</p></blockquote>
+<p>如果在删除内核环节出现这样一张图</p>
+<p><a href="4242/eec93676eb77-1523932192-3948-10.png" data-fancybox="images" ><img decoding="async" class="attachment-medium size-medium alignnone" src="4242/eec93676eb77-1523932192-3948-10.png" /></a></p>
+<p>&nbsp;</p>
+<p><strong>注意选择NO</strong></p>
+<p>根据自己需求操作，重启后再使用<code>./tcp.sh</code>命令接着操作</p>
+<p>脚本会自动检测安装的情况，请注意脚本菜单下的<strong>状态检测</strong>即可。</p>
+<p>&nbsp;</p>
+<h2>参考资料</h2>
+<ol>
+<li>魔改BBR原帖：<a title="http://www.hostloc.com/thread-372277-1-2.html" href="http://www.hostloc.com/thread-372277-1-2.html">http://www.hostloc.com/thread-372277-1-2.html</a></li>
+<li>脚本参考：<a title="https://ylws.me/tech/68.html" href="https://ylws.me/tech/68.html">https://ylws.me/tech/68.html</a></li>
+<li>技术参考：<a title="http://51.ruyo.net/p/4415.html" href="http://51.ruyo.net/p/4415.html">http://51.ruyo.net/p/4415.html</a></li>
+</ol>
+<p>同时非常感谢vicer提供Lotserver一键脚本。</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>[suxing_insert_post ids=4281]</p>
+</div></article><nav><a href="4245.html">较新：#笔记#WordPress 代码高亮插件：Pure-Highlightjs</a> <a href="4235.html">较早：【韩都动效设计】天猫海报鼠标跟随</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>

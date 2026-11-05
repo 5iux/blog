@@ -1,0 +1,25 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>纯CSS液态形状动画 · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>纯CSS液态形状动画</h1><p class="meta">2018-10-24 · 文章 4605 · <a href="https://blog.5iux.cn/4605.html">原文</a></p><div class="content"><blockquote><p>看到一个描边圆角工具，突发灵感写一个液态动画效果</p>
+<p>具体原理是通过css的圆角和旋转来实现，很简单</p></blockquote>
+<p>&nbsp;</p>
+<h2>效果图：</h2>
+<p>&nbsp;</p>
+<p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-4606" src="4605/21cc936d5a20-2018102414043211.gif" alt="" width="750" height="360" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>CSS代码：</h2>
+<pre class="pure-highlightjs"><code class="css">	div{width:300px; height: 300px; background-color: #000; opacity: 0.6; margin:100px auto; transition: 1s all linear; animation: 5s horn linear infinite;}
+	@keyframes horn{
+		0%{ border-radius:53% 47% 43% 57% / 58% 57% 43% 42% ; transform: rotate(0deg);}
+		20%{border-radius:44% 56% 63% 37% / 40% 49% 51% 60%; }
+		40%{border-radius:61% 39% 45% 55% / 27% 57% 43% 73% ;}
+		60%{border-radius:45% 55% 47% 53% / 51% 44% 56% 49% ;}
+		80%{border-radius:66% 34% 42% 58% / 51% 61% 39% 49% ;}
+		100%{border-radius:53% 47% 43% 57% / 58% 57% 43% 42% ; transform: rotate(360deg);}
+
+	}
+</code></pre>
+<p>&nbsp;</p>
+<h2>demo效果：</h2>
+<p>&nbsp;</p>
+<p><span style="color: #ff0000;"><strong><a href="https://cdn.jsdelivr.net/gh/5iux/dyimg/blog/2018/10/2019062415293614.html" target="_blank" rel="noopener noreferrer">&gt;&gt;点击查看&lt;&lt;</a></strong></span></p>
+</div></article><nav><a href="4610.html">较新：天猫店铺css实现鼠标滑过水波效果-韩都类目动效</a> <a href="4601.html">较早：纯CSS实现彩虹loading动画</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>

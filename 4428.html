@@ -1,0 +1,39 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>#笔记#js 实时监听input中值变化 · 5IUX博客</title><link rel="stylesheet" href="assets/style.css"></head><body><header><a href="index.html">5IUX博客</a><span>本地静态归档</span></header><main><article><h1>#笔记#js 实时监听input中值变化</h1><p class="meta">2018-05-31 · 文章 4428 · <a href="https://blog.5iux.cn/4428.html">原文</a></p><div class="content"><blockquote><p>源码来自网路，大概简单修改了下，DEMO在最底下</p></blockquote>
+<p><!--more--></p>
+<h2>效果图：</h2>
+<p>&nbsp;</p>
+<p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-4431" src="4428/fe22f1bdd487-2018053114593173.gif" alt="" width="794" height="422" srcset="4428/df3725910721-2018053114593173.gif 794w, 4428/7210d2040e73-2018053114593173-768x408.gif 768w" sizes="auto, (max-width: 794px) 100vw, 794px" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><!--more--></p>
+<p>&nbsp;</p>
+<h2>HTML:</h2>
+<p>&nbsp;</p>
+<pre class="pure-highlightjs"><code class="html">&lt;!DOCTYPE html&gt;  
+&lt;html&gt;  
+    &lt;head&gt;  
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;  
+        &lt;title&gt;RunJS&lt;/title&gt;  
+    &lt;script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;  
+    &lt;/head&gt;  
+    &lt;body&gt;  
+        &lt;h1 &gt;  
+            实时监测input中值的变化  
+        &lt;/h1&gt;  
+        &lt;input type="text" id="username" autoComplete='off'&gt;  
+        &lt;div id="result"&gt;&lt;/div&gt;  
+    &lt;/body&gt;  
+&lt;/html&gt; 
+</code></pre>
+<h2>js:</h2>
+<p>&nbsp;</p>
+<pre class="pure-highlightjs"><code class="javascript">$(function() {
+
+    $('#username').bind('input propertychange', function() {
+        $('#result').html($(this).val().length + ' characters');
+    });
+
+})</code></pre>
+<p>&nbsp;</p>
+<h2><a href="https://cdn.jsdelivr.net/gh/5iux/dyimg/blog/2018/05/2018053114593267.html" target="_blank" rel="noopener">&gt;&gt;查看Demo&lt;&lt;</a></h2>
+</div></article><nav><a href="4445.html">较新：一起听首老歌【长路漫漫伴你闯】</a> <a href="4424.html">较早：【韩都动效设计】61赠品活动卡片动效</a></nav></main><footer>5IUX博客 · 本地归档</footer></body></html>
